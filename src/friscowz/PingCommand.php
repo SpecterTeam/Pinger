@@ -33,9 +33,7 @@ class PingCommand extends PluginCommand
     public function execute(CommandSender $sender, string $commandLabel, array $args)
     {
         if($sender instanceof Player){
-            $ping = $sender->getPing();
-            $message = str_replace("{ping}", $ping, Pinger::getConfigFile()->get("Message"));
-            $sender->sendMessage($message);
+            $sender->sendMessage(str_replace("{ping}", $sender->getPing(), Pinger::getConfigFile()->get("Message")));
         }
     }
 }
