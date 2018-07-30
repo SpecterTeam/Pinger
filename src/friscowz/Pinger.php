@@ -16,7 +16,6 @@ use pocketmine\utils\TextFormat;
 class Pinger extends PluginBase
 {
     const CONFIG_FILE = "config.yml";
-    const AUTHOR = "@OGFris";
 
     public static $instance;
     public static $config;
@@ -33,7 +32,6 @@ class Pinger extends PluginBase
             self::setConfigFile($config);
         }
         $this->registerCommands();
-        $this->getLogger()->info(TextFormat::AQUA . "Pinger plugin successfully enabled! (made by " . self::AUTHOR .")");
     }
 
     /**
